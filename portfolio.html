@@ -204,207 +204,6 @@
         }
 
 
-        .features-section {
-            background-color: #F9F6ED; /* Off-white cream background */
-            padding: 100px 5%;
-            font-family: Arial, sans-serif;
-        }
-
-        .features-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            column-gap: 60px;
-            row-gap: 80px;
-        }
-
-        .feature-item {
-            position: relative;
-            padding-top: 10px;
-        }
-
-        /* The Quotation Mark Icon */
-        .quote-icon {
-            position: absolute;
-            top: -15px;
-            left: -25px;
-            font-family: 'Georgia', serif;
-            font-size: 80px;
-            color: #FFD242; /* The signature yellow */
-            opacity: 0.8;
-            line-height: 1;
-            z-index: 1;
-            user-select: none;
-        }
-
-        .feature-content {
-            position: relative;
-            z-index: 2; /* Sits above the quote icon */
-        }
-
-        .feature-title {
-            font-family: 'Arial Black', sans-serif;
-            font-size: 24px;
-            line-height: 1.1;
-            margin-bottom: 15px;
-            color: #000;
-        }
-
-        .feature-description {
-            font-size: 14px;
-            line-height: 1.6;
-            color: #333;
-            margin: 0;
-        }
-
-        /* Mobile Responsive adjustments */
-        @media (max-width: 992px) {
-            .features-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 600px) {
-            .features-grid {
-                grid-template-columns: 1fr;
-                row-gap: 60px;
-            }
-            
-            .features-section {
-                padding: 60px 10%;
-            }
-        }
-
-        /* Section Wrapper */
-        .trust-section {
-            background-color: #000000;
-            padding: 120px 5%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-
-        .trust-content {
-            max-width: 800px;
-        }
-
-        /* Headline: High weight and Impact */
-        .trust-title {
-            font-family: 'Arial Black', sans-serif;
-            font-size: clamp(32px, 6vw, 56px);
-            color: #ffffff;
-            margin: 0 0 20px 0;
-            letter-spacing: -1px;
-            text-transform: capitalize;
-        }
-
-        .brand-title {
-            font-family: 'Arial Black', sans-serif;
-            font-size: clamp(16px, 6vw, 24px);
-            color:#000;
-            margin: 0 0 20px 0;
-            letter-spacing: -1px;
-            text-transform: capitalize;
-        }
-
-        
-
-        /* Subtext: Lighter weight and spaced out */
-        .trust-subtitle {
-            font-family: Arial, sans-serif;
-            font-size: clamp(16px, 2.5vw, 20px);
-            color: #ffffff;
-            font-weight: 300;
-            letter-spacing: 0.5px;
-            opacity: 0.9;
-            margin: 0;
-        }
-
-        /* Responsive Breakpoint */
-        @media (max-width: 600px) {
-            .trust-section {
-                padding: 80px 20px;
-            }
-        }
-
-        /* Section Wrapper */
-        .belief-section {
-            display: grid;
-            grid-template-columns: 1fr 1fr; /* Equal split */
-            min-height: 600px;
-            width: 100%;
-            overflow: hidden;
-            font-family: Arial, sans-serif;
-        }
-
-        /* Left Column: Text Content */
-        .belief-text-side {
-            background-color: #000000;
-            color: #ffffff;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 80px 10%;
-        }
-
-        .belief-text-side h2 {
-            font-family: 'Arial Black', sans-serif;
-            font-size: clamp(36px, 6vw, 64px);
-            margin: 0 0 20px 0;
-            line-height: 1.1;
-        }
-
-        .belief-text-side h3 {
-            font-size: 22px;
-            font-weight: bold;
-            margin-bottom: 20px;
-            line-height: 1.3;
-        }
-
-        .belief-text-side p {
-            font-size: 15px;
-            line-height: 1.8;
-            color: #cccccc;
-            max-width: 500px;
-            margin: 0;
-        }
-
-        /* Right Column: Illustration Content */
-        .belief-image-side {
-            background-color: #FFD242; /* Signature Yellow */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 40px;
-        }
-
-        .belief-image-side img {
-            max-width: 90%;
-            height: auto;
-            object-fit: contain;
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 992px) {
-            .belief-section {
-                grid-template-columns: 1fr; /* Stack vertically */
-            }
-
-            .belief-image-side {
-                order: -1; /* Image appears first on mobile */
-                padding: 60px 20px;
-                min-height: 350px;
-            }
-
-            .belief-text-side {
-                padding: 60px 10%;
-                text-align: center;
-                align-items: center;
-            }
-        }
-
         /* Container for the whole section */
         .portfolio-section {
             background-color: #ffffff;
@@ -632,83 +431,6 @@
         </div>
     </section>
 
-    <section class="trust-section">
-        <div class="trust-content">
-            <h2 class="trust-title">In Founders we Trust</h2>
-            <p class="trust-subtitle">We invested. They made the history.</p>
-        </div>
-    </section>
-
-    <section class="features-section">
-        <div class="features-grid">
-            
-            <div class="feature-item">
-                <div class="quote-icon">“</div>
-                <div class="feature-content">
-                    <h3 class="feature-title">12<br>months</h3>
-                    <p class="feature-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.</p>
-                </div>
-            </div>
-
-            <div class="feature-item">
-                <div class="quote-icon">“</div>
-                <div class="feature-content">
-                    <h3 class="feature-title">Fully<br>Funded</h3>
-                    <p class="feature-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.</p>
-                </div>
-            </div>
-
-            <div class="feature-item">
-                <div class="quote-icon">“</div>
-                <div class="feature-content">
-                    <h3 class="feature-title">40<br>Companies</h3>
-                    <p class="feature-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.</p>
-                </div>
-            </div>
-
-            <div class="feature-item">
-                <div class="quote-icon">“</div>
-                <div class="feature-content">
-                    <h3 class="feature-title">Who is<br>Included?</h3>
-                    <p class="feature-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</p>
-                </div>
-            </div>
-
-            <div class="feature-item">
-                <div class="quote-icon">“</div>
-                <div class="feature-content">
-                    <h3 class="feature-title">What do we<br>offer?</h3>
-                    <p class="feature-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat.</p>
-                </div>
-            </div>
-
-            <div class="feature-item">
-                <div class="quote-icon">“</div>
-                <div class="feature-content">
-                    <h3 class="feature-title">How does it<br>work?</h3>
-                    <p class="feature-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio.</p>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-
-    <section class="belief-section">
-        <div class="belief-text-side">
-            <h2>Our Belief.</h2>
-            <h3>Entrepreneurs come from everywhere.</h3>
-            <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-                when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-            </p>
-        </div>
-
-        <div class="belief-image-side">
-            <img src="images/belief-image.png" alt="Collaborative workspace illustration">
-        </div>
-    </section>
 
     <section class="portfolio-section">
         <div class="brand-title" style="text-align: center;">
@@ -766,9 +488,142 @@
                 <p class="brand-funded">Funded: $250k</p>
             </div>
 
+            <div class="brand-card">
+                <div class="brand-meta-top">
+                    <span>2024</span>
+                    <span>Deep-Tech</span>
+                </div>
+                <div class="brand-logo-box">
+                    <div style="font-weight: bold; color: #1a237e;"><img style="width: 55%;" src="images/logo.png" alt="">WIZARDON</div>
+                </div>
+                <h4 class="brand-name">Wizardon</h4>
+                <p class="brand-funded">Funded: $250k</p>
             </div>
-    </section>
 
+            <div class="brand-card">
+                <div class="brand-meta-top">
+                    <span>2024</span>
+                    <span>Deep-Tech</span>
+                </div>
+                <div class="brand-logo-box">
+                    <div style="font-weight: bold; color: #1a237e;"><img style="width: 100%;" src="images/logo1.svg" alt=""> REFREEG</div>
+                </div>
+                <h4 class="brand-name">refreeg</h4>
+                <p class="brand-funded">Funded: $250k</p>
+            </div>
+
+            <div class="brand-card">
+                <div class="brand-meta-top">
+                    <span>2024</span>
+                    <span>Deep-Tech</span>
+                </div>
+                <div class="brand-logo-box">
+                    <div style="font-weight: bold; color: #1a237e;"><img style="width: 60%;" src="images/biohazard-solid.svg" alt=""> UPSMINND</div>
+                </div>
+                <h4 class="brand-name">Upsmind</h4>
+                <p class="brand-funded">Funded: $250k</p>
+            </div>
+
+            <div class="brand-card">
+                <div class="brand-meta-top">
+                    <span>2024</span>
+                    <span>Deep-Tech</span>
+                </div>
+                <div class="brand-logo-box">
+                    <div style="font-weight: bold; color: #1a237e;"><img src="images/logo2.png" alt=""> TEFCONNECT</div>
+                </div>
+                <h4 class="brand-name">TEFconnect</h4>
+                <p class="brand-funded">Funded: $250k</p>
+            </div>
+
+            <div class="brand-card">
+                <div class="brand-meta-top">
+                    <span>2024</span>
+                    <span>Deep-Tech</span>
+                </div>
+                <div class="brand-logo-box">
+                    <div style="font-weight: bold; color: #1a237e;"><img src="images/logo (1).webp" alt=""> CODDEBASE</div>
+                </div>
+                <h4 class="brand-name">Codebase</h4>
+                <p class="brand-funded">Funded: $250k</p>
+            </div>
+
+            <div class="brand-card">
+                <div class="brand-meta-top">
+                    <span>2024</span>
+                    <span>Deep-Tech</span>
+                </div>
+                <div class="brand-logo-box">
+                    <div style="font-weight: bold; color: #1a237e;"><img style="width: 65%;" src="images/logo (2).webp" alt="">NUBIANDEV</div>
+                </div>
+                <h4 class="brand-name">Nubiandev</h4>
+                <p class="brand-funded">Funded: $250k</p>
+            </div>
+
+            <div class="brand-card">
+                <div class="brand-meta-top">
+                    <span>2024</span>
+                    <span>Deep-Tech</span>
+                </div>
+                <div class="brand-logo-box">
+                    <div style="font-weight: bold; color: #1a237e;"><img style="width: 100%;" src="images/logo5.png" alt=""> ACCELGORA ACADEMY</div>
+                </div>
+                <h4 class="brand-name">Accelgora Academy</h4>
+                <p class="brand-funded">Funded: $250k</p>
+            </div>
+
+            <div class="brand-card">
+                <div class="brand-meta-top">
+                    <span>2024</span>
+                    <span>Deep-Tech</span>
+                </div>
+                <div class="brand-logo-box">
+                    <div style="font-weight: bold; color: #1a237e;"><img src="images/logo3.webp" alt=""> DWALLNET</div>
+                </div>
+                <h4 class="brand-name">Dwallent</h4>
+                <p class="brand-funded">Funded: $250k</p>
+            </div>
+
+            <div class="brand-card">
+                <div class="brand-meta-top">
+                    <span>2024</span>
+                    <span>Deep-Tech</span>
+                </div>
+                <div class="brand-logo-box">
+                    <div style="font-weight: bold; color: #1a237e;"><img src="images/onatech.png" alt=""> ONATECHNGC</div>
+                </div>
+                <h4 class="brand-name">Onatechngc</h4>
+                <p class="brand-funded">Funded: $250k</p>
+            </div>
+            <div class="brand-card">
+                <div class="brand-meta-top">
+                    <span>2024</span>
+                    <span>Deep-Tech</span>
+                </div>
+                <div class="brand-logo-box">
+                    <div style="font-weight: bold; color: #1a237e;"><img src="images/logo4.png" alt=""> VARLC</div>
+                </div>
+                <h4 class="brand-name">Varlc</h4>
+                <p class="brand-funded">Funded: $250k</p>
+            </div>
+
+            <div class="brand-card">
+                <div class="brand-meta-top">
+                    <span>2024</span>
+                    <span>Deep-Tech</span>
+                </div>
+                <div class="brand-logo-box">
+                    <div style="font-weight: bold; color: #1a237e;"><img style="width: 60%;" src="images/igreen republic.jpeg" alt=""> IGREEN</div>
+                </div>
+                <h4 class="brand-name">Igreen</h4>
+                <p class="brand-funded">Funded: $250k</p>
+            </div>
+
+
+
+        </div>
+    </section>
+    
 
     <section class="footer-section">
         <div class="footer-content">
@@ -780,10 +635,9 @@
                 </a>
 
                 <ul class="footer-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="aboutus.html">Our story</a></li>
-                    <li><a href="team.html">Team</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="#">Our story</a></li>
+                    <li><a href="#">Team</a></li>
+                    <li><a href="#">Portfolio</a></li>
                     <li><a href="#">News</a></li>
                     <li><a href="#">Talent</a></li>
                 </ul>
