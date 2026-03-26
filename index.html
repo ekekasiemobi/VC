@@ -12,12 +12,17 @@
         }
         /* Base Styles - Using a Section wrapper as requested */
         .nav-container {
-            background-color: #FFD242; /* The yellow from your image */
+            background-color: #FFD242;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             padding: 0 5%;
             border-bottom: 2px solid #000;
+            
+            /* The Magic Sauce */
+            position: sticky;
+            top: 0;
+            z-index: 9999; /* Keeps it above all other content */
+            width: 100%;
         }
-
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -688,7 +693,8 @@
             </a>
 
             <ul class="nav-menu" id="nav-menu">
-                <li class="nav-item"><a href="#" class="nav-link">Our Story</a></li>
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="aboutus.html" class="nav-link">Our Story</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Team</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Portfolio</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">News</a></li>
