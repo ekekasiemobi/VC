@@ -23,7 +23,6 @@
             z-index: 9999; /* Keeps it above all other content */
             width: 100%;
         }
-
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -204,150 +203,103 @@
             }
         }
 
-        /* investment section */
-        /* Global Container Styles */
-    .investment-container {
-      font-family: 'Inter', sans-serif;
-      line-height: 1.5;
-      width: 100%;
-      margin: 0;
-      padding: 0;
-    }
 
-    /* Top Hero Section Styles */
-    .hero-section {
-      background-color: #000000;
-      color: #ffffff;
-      padding: 80px 10% 120px 10%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 40px;
-    }
+        /* Team Section Wrapper */
+        .team-section {
+            padding: 80px 10%;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            text-align: center;
+        }
 
-    .hero-content {
-      flex: 1;
-      max-width: 500px;
-    }
+        .team-header h2 {
+            font-family: 'Arial Black', sans-serif;
+            font-size: 42px;
+            margin-bottom: 10px;
+            text-transform: capitalize;
+            color: #000;
+        }
 
-    .hero-title {
-      font-size: 2.5rem;
-      font-weight: 800;
-      margin-bottom: 24px;
-      text-transform: none;
-    }
+        .team-header p {
+            font-size: 16px;
+            color: #ccc;
+            margin-bottom: 60px;
+        }
 
-    .hero-description {
-      font-size: 1.1rem;
-      color: #cccccc;
-      max-width: 450px;
-    }
+        /* Grid Layout for Team Members */
+        .team-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Two columns */
+            gap: 60px 40px;
+            max-width: 1100px;
+            margin: 0 auto;
+            text-align: left;
+        }
 
-    .hero-image {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      position: relative;
-    }
+        .member-card {
+            display: flex;
+            gap: 25px;
+            align-items: flex-start;
+        }
 
-    /* Simple CSS illustration representation */
-    .illustration-placeholder {
-      width: 300px;
-      height: 300px;
-      background: #fde68a;
-      border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+        /* Photo Styles */
+        .member-photo {
+            width: 180px;
+            height: 180px;
+            background-color: #d9d9d9; /* Grey placeholder from your image */
+            flex-shrink: 0;
+            overflow: hidden;
+        }
 
-    .question-bubble {
-      position: absolute;
-      top: -10px;
-      right: 20px;
-      background: white;
-      color: #ffb1c1;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2rem;
-      font-weight: bold;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
+        .member-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
-    /* Bottom Stats Section Styles */
-    .stats-section {
-      background-color: #ffcc33;
-      padding: 60px 10%;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-      text-align: center;
-    }
+        /* Text Styles */
+        .member-info h3 {
+            font-size: 24px;
+            margin: 0 0 5px 0;
+            font-weight: normal;
+            color: #000;
+        }
 
-    .stat-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
+        .member-role {
+            font-size: 10px;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            display: block;
+        }
 
-    .stat-icon {
-      font-size: 2.5rem;
-      margin-bottom: 15px;
-    }
+        .member-bio {
+            font-size: 13px;
+            line-height: 1.6;
+            color: #bbb;
+            margin: 0;
+        }
 
-    .stat-number {
-      font-size: 2.2rem;
-      font-weight: 800;
-      color: #000000;
-      position: relative;
-      margin-bottom: 5px;
-    }
+        /* Mobile Responsiveness */
+        @media (max-width: 900px) {
+            .team-grid {
+                grid-template-columns: 1fr; /* Stack to one column */
+                gap: 40px;
+            }
+        }
 
-    .plus-sign {
-      display: block;
-      font-size: 1.2rem;
-      margin-top: -5px;
-    }
-
-    .stat-label {
-      font-size: 0.9rem;
-      font-weight: 500;
-      color: #333333;
-    }
-
-    /* Mobile Responsiveness */
-    @media (max-width: 992px) {
-      .hero-section {
-        flex-direction: column;
-        text-align: center;
-        padding-bottom: 60px;
-      }
-      .hero-description {
-        margin: 0 auto;
-      }
-      .stats-section {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 40px;
-      }
-    }
-
-    @media (max-width: 576px) {
-      .hero-title {
-        font-size: 2rem;
-      }
-      .stats-section {
-        grid-template-columns: 1fr;
-      }
-      .illustration-placeholder {
-        width: 200px;
-        height: 200px;
-      }
-    }
+        @media (max-width: 500px) {
+            .member-card {
+                flex-direction: column; /* Stack image on top of text for small phones */
+                align-items: center;
+                text-align: center;
+            }
+            .member-photo {
+                width: 100%;
+                height: 250px;
+            }
+        }
 
         /* Footer Wrapper */
         .footer-section {
@@ -463,11 +415,9 @@
         <div class="about-container">
             
             <div class="about-text">
-                <h2>The founder’s ally.</h2>
+                <h2>The people behind the people changing.</h2>
                 <p>
-                    When ambitious ideas meet brilliant founders, they know no limits. 
-                    From our team’s entrepreneurial experience to our ever-growing international network, 
-                    everything we do is to create an environment where founders can thrive.
+                    It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages
                 </p>
                 <!-- <a href="#" class="btn-story">Our Story</a> -->
             </div>
@@ -479,44 +429,124 @@
         </div>
     </section>
 
-    <section class="investment-container">
-  <div class="hero-section">
-    <div class="hero-content">
-      <h1 class="hero-title">The leading European ideas</h1>
-      <p class="hero-description">
-        We’re a European fund with a genuine curiosity for new challenges, having backed founders from diverse backgrounds. Good ideas know no borders. And neither do our investments.
-      </p>
-    </div>
-    <div class="hero-image">
-      <div class="illustration-placeholder">
-        <div class="question-bubble">?</div>
-        <div class="character-shape"></div>
-      </div>
-    </div>
-  </div>
+    
+    <section style="background-color: #f9f6ed;" class="team-section">
+        <div class="team-header">
+            <h2>The Team</h2>
+            <p>Meet our small team that make those great products.</p>
+        </div>
 
-  <div class="stats-section">
-    <div class="stat-item">
-      <div class="stat-icon">🪙↑</div>
-      <div class="stat-number">70<span class="plus-sign">+</span></div>
-      <div class="stat-label">Companies Funded</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-icon">📊</div>
-      <div class="stat-number">350<span class="plus-sign">+</span></div>
-      <div class="stat-label">Company Deals</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-icon">💸</div>
-      <div class="stat-number">20<span class="plus-sign">+</span></div>
-      <div class="stat-label">Number Of Founds</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-icon">💼</div>
-      <div class="stat-number">459<span class="plus-sign">+</span></div>
-      <div class="stat-label">Total Credit Value</div>
-    </div>
-  </div>
+        <div class="team-grid">
+            <div class="member-card">
+                <div class="member-photo">
+                    <img src="images/WhatsApp Image 2026-03-23 at 10.49.14 PM.jpeg" alt="Morgan James" onerror="this.style.display='none'">
+                </div>
+                <div class="member-info">
+                    <h3>Anthony muff </h3>
+                    <span class="member-role">Managing Partner</span>
+                    <p class="member-bio">Ex-physicist. Obsessed with foundational models.</p>
+                </div>
+            </div>
+
+            <div class="member-card">
+                <div class="member-photo">
+                    <img src="images/WhatsApp Image 2026-03-23 at 10.49.14 PM (1).jpeg" alt="">
+                </div>
+                <div class="member-info">
+                    <h3>Gloria Adin</h3>
+                    <span class="member-role">General Partner</span>
+                    <p class="member-bio">Previously built three bio-platforms.</p>
+                </div>
+            </div>
+
+            <div class="member-card">
+                <div class="member-photo">
+                    <img src="images/WhatsApp Image 2026-03-23 at 10.49.14 PM (2).jpeg" alt="">
+                </div>
+                <div class="member-info">
+                    <h3>Ngozi chima</h3>
+                    <span class="member-role">General Partner</span>
+                    <p class="member-bio">Focus on industrial automation and robotics.</p>
+                </div>
+            </div>
+
+            <div class="member-card">
+                <div class="member-photo">
+                     <img src="images/WhatsApp Image 2026-03-23 at 10.49.14 PM (3).jpeg" alt="Maria Pette" onerror="this.style.display='none'">
+                </div>
+                <div class="member-info">
+                    <h3>Jonathan Nkalu </h3>
+                    <span class="member-role">Finance Director</span>
+                    <p class="member-bio">Manages financial operations.</p>
+                </div>
+            </div>
+
+            <div class="member-card">
+                <div class="member-photo">
+                     <img src="images/WhatsApp Image 2026-03-23 at 10.49.15 PM (1).jpeg" alt="Maria Pette" onerror="this.style.display='none'">
+                </div>
+                <div class="member-info">
+                    <h3>Andrew Jima</h3>
+                    <span class="member-role">Operating Partner</span>
+                    <p class="member-bio">Scale expert. Former COO at two decacorns.</p>
+                </div>
+            </div>
+
+            <div class="member-card">
+                <div class="member-photo">
+                     <img src="images/WhatsApp Image 2026-03-23 at 10.49.15 PM (2).jpeg" alt="Maria Pette" onerror="this.style.display='none'">
+                </div>
+                <div class="member-info">
+                    <h3>Chinonso Amadi </h3>
+                    <span class="member-role">Talent Partner</span>
+                    <p class="member-bio">Finds the best people.</p>
+                </div>
+            </div>
+
+            <div class="member-card">
+                <div class="member-photo">
+                     <img src="images/WhatsApp Image 2026-03-23 at 10.49.15 PM.jpeg" alt="Maria Pette" onerror="this.style.display='none'">
+                </div>
+                <div class="member-info">
+                    <h3>Philip jones</h3>
+                    <span class="member-role">Operations Manager</span>
+                    <p class="member-bio">Keeps everything running smoothly.</p>
+                </div>
+            </div>
+
+            <div class="member-card">
+                <div class="member-photo">
+                     <img src="images/WhatsApp Image 2026-03-23 at 10.49.16 PM.jpeg" alt="Maria Pette" onerror="this.style.display='none'">
+                </div>
+                <div class="member-info">
+                    <h3>Fabio Gomes </h3>
+                    <span class="member-role">Talent Acquisition</span>
+                    <p class="member-bio">Connects with great candidates.</p>
+                </div>
+            </div>
+
+            <div class="member-card">
+                <div class="member-photo">
+                     <img src="images/WhatsApp Image 2026-03-23 at 10.49.16 PM (1).jpeg" alt="Maria Pette" onerror="this.style.display='none'">
+                </div>
+                <div class="member-info">
+                    <h3>Stella Okpara </h3>
+                    <span class="member-role">Talent Sourcer</span>
+                    <p class="member-bio">Expert in finding hidden gems.</p>
+                </div>
+            </div>
+
+            <div class="member-card">
+                <div class="member-photo">
+                     <img src="images/WhatsApp Image 2026-03-23 at 10.49.16 PM (2).jpeg" alt="Maria Pette" onerror="this.style.display='none'">
+                </div>
+                <div class="member-info">
+                    <h3>Kachi Eze</h3>
+                    <span class="member-role">Recruiting Coordinator</span>
+                    <p class="member-bio">Ensures a smooth interview process.</p>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section class="footer-section">
