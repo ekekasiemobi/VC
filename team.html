@@ -5,10 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Responsive Navigation</title>
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
-        /* Removes default browser margins and padding */
-        margin: 0;
-        padding: 0;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; /* Extra safety to prevent any horizontal scrolling */
         }
         /* Base Styles - Using a Section wrapper as requested */
         .nav-container {
@@ -390,8 +394,8 @@
     <section class="nav-container">
         <nav class="navbar">
             <a href="#" class="logo">
-                <div class="logo-circle"></div>
-                <span>VC</span>
+                <img style="width: 50%;" src="images/brandlogo.png" alt="">
+                <!-- <span>VC</span> -->
             </a>
 
             <ul class="nav-menu" id="nav-menu">
@@ -399,8 +403,8 @@
                 <li class="nav-item"><a href="aboutus.html" class="nav-link">Our Story</a></li>
                 <li class="nav-item"><a href="team.html" class="nav-link">Team</a></li>
                 <li class="nav-item"><a href="portfolio.html" class="nav-link">Portfolio</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">News</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Talent</a></li>
+                <!-- <li class="nav-item"><a href="#" class="nav-link">News</a></li> -->
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
 
             <div class="hamburger" id="hamburger">

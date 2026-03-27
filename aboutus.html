@@ -3,24 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Navigation</title>
+    <title>About Us | From Idea to Global Scale</title>
     <style>
-        body {
-        /* Removes default browser margins and padding */
-        margin: 0;
-        padding: 0;
+        /* GLOBAL RESET & FIXES */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
-        /* Base Styles - Using a Section wrapper as requested */
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #000;
+            overflow-x: hidden;
+        }
+
+        /* NAVIGATION */
         .nav-container {
             background-color: #FFD242;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             padding: 0 5%;
             border-bottom: 2px solid #000;
-            
-            /* The Magic Sauce */
             position: sticky;
             top: 0;
-            z-index: 9999; /* Keeps it above all other content */
+            z-index: 9999;
             width: 100%;
         }
 
@@ -33,31 +39,19 @@
             margin: 0 auto;
         }
 
-        /* Logo Area */
         .logo {
             display: flex;
             align-items: center;
-            font-weight: bold;
-            font-size: 24px;
             text-decoration: none;
             color: #000;
         }
 
-        .logo-circle {
-            width: 30px;
-            height: 30px;
-            border: 2px solid #000;
-            border-radius: 50%;
-            margin-right: 10px;
-        }
+        .logo img { width: 200px; }
 
-        /* Nav Links */
         .nav-menu {
             display: flex;
             list-style: none;
             gap: 30px;
-            margin: 0;
-            padding: 0;
         }
 
         .nav-link {
@@ -68,11 +62,8 @@
             transition: opacity 0.3s;
         }
 
-        .nav-link:hover {
-            opacity: 0.7;
-        }
+        .nav-link:hover { opacity: 0.7; }
 
-        /* Mobile Menu Icon (Hidden on Desktop) */
         .hamburger {
             display: none;
             cursor: pointer;
@@ -85,43 +76,12 @@
             width: 25px;
             height: 3px;
             background-color: #000;
-            transition: 0.3s;
         }
 
-        /* Responsive Breakpoint */
-        @media (max-width: 768px) {
-            .hamburger {
-                display: flex;
-            }
-
-            .nav-menu {
-                position: absolute;
-                top: 80px;
-                left: -100%;
-                flex-direction: column;
-                background-color: #FFD242;
-                width: 100%;
-                text-align: center;
-                transition: 0.4s;
-                padding: 20px 0;
-                border-bottom: 2px solid #000;
-                z-index: 100;
-            }
-
-            .nav-menu.active {
-                left: 0;
-            }
-
-            .nav-item {
-                margin: 15px 0;
-            }
-        }
-        
-        /* Section Wrapper */
+        /* HERO SECTION */
         .about-section {
-            background-color: #FFD242; /* Matched yellow */
+            background-color: #FFD242;
             padding: 80px 10%;
-            font-family: Arial, sans-serif;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -131,305 +91,208 @@
         .about-container {
             max-width: 1200px;
             display: grid;
-            grid-template-columns: 1.2fr 1fr; /* Text gets slightly more space */
+            grid-template-columns: 1.2fr 1fr;
             gap: 50px;
             align-items: center;
         }
 
-        /* Left Column: Typography */
         .about-text h2 {
             font-family: 'Arial Black', sans-serif;
             font-size: clamp(32px, 5vw, 48px);
             line-height: 1.2;
-            color: #000;
-            margin-bottom: 30px;
-            letter-spacing: -1px;
+            margin-bottom: 20px;
         }
 
-        .about-text p {
-            font-size: 16px;
-            line-height: 1.8;
-            color: #000;
-            margin-bottom: 40px;
-            max-width: 500px;
-        }
-
-        .btn-story {
+        .tagline-hero {
             display: inline-block;
-            background-color: #000;
-            color: #fff;
-            padding: 15px 45px;
-            text-decoration: none;
+            background: #000;
+            color: #FFD242;
+            padding: 5px 15px;
             font-weight: bold;
+            text-transform: uppercase;
             font-size: 14px;
-            transition: all 0.3s ease;
-        }
-
-        .btn-story:hover {
-            opacity: 0.8;
-            transform: translateY(-2px);
-        }
-
-        /* Right Column: Illustration */
-        .about-image {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            margin-bottom: 15px;
         }
 
         .about-image img {
             max-width: 100%;
             height: auto;
-            /* If you don't have the image file, this placeholder acts as a fallback */
-            min-height: 300px; 
         }
 
-        /* Mobile Responsive */
-        @media (max-width: 992px) {
-            .about-container {
-                grid-template-columns: 1fr; /* Stack vertically */
-                text-align: center;
-            }
-
-            .about-text p {
-                margin: 0 auto 40px auto;
-            }
-
-            .about-section {
-                padding: 60px 5%;
-            }
-            
-            .about-image {
-                order: -1; /* Image appears above text on mobile for better flow */
-            }
-        }
-
-        /* investment section */
-        /* Global Container Styles */
-    .investment-container {
-      font-family: 'Inter', sans-serif;
-      line-height: 1.5;
-      width: 100%;
-      margin: 0;
-      padding: 0;
-    }
-
-    /* Top Hero Section Styles */
-    .hero-section {
-      background-color: #000000;
-      color: #ffffff;
-      padding: 80px 10% 120px 10%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 40px;
-    }
-
-    .hero-content {
-      flex: 1;
-      max-width: 500px;
-    }
-
-    .hero-title {
-      font-size: 2.5rem;
-      font-weight: 800;
-      margin-bottom: 24px;
-      text-transform: none;
-    }
-
-    .hero-description {
-      font-size: 1.1rem;
-      color: #cccccc;
-      max-width: 450px;
-    }
-
-    .hero-image {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      position: relative;
-    }
-
-    /* Simple CSS illustration representation */
-    .illustration-placeholder {
-      width: 300px;
-      height: 300px;
-      background: #fde68a;
-      border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .question-bubble {
-      position: absolute;
-      top: -10px;
-      right: 20px;
-      background: white;
-      color: #ffb1c1;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2rem;
-      font-weight: bold;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-
-    /* Bottom Stats Section Styles */
-    .stats-section {
-      background-color: #ffcc33;
-      padding: 60px 10%;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-      text-align: center;
-    }
-
-    .stat-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .stat-icon {
-      font-size: 2.5rem;
-      margin-bottom: 15px;
-    }
-
-    .stat-number {
-      font-size: 2.2rem;
-      font-weight: 800;
-      color: #000000;
-      position: relative;
-      margin-bottom: 5px;
-    }
-
-    .plus-sign {
-      display: block;
-      font-size: 1.2rem;
-      margin-top: -5px;
-    }
-
-    .stat-label {
-      font-size: 0.9rem;
-      font-weight: 500;
-      color: #333333;
-    }
-
-    /* Mobile Responsiveness */
-    @media (max-width: 992px) {
-      .hero-section {
-        flex-direction: column;
-        text-align: center;
-        padding-bottom: 60px;
-      }
-      .hero-description {
-        margin: 0 auto;
-      }
-      .stats-section {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 40px;
-      }
-    }
-
-    @media (max-width: 576px) {
-      .hero-title {
-        font-size: 2rem;
-      }
-      .stats-section {
-        grid-template-columns: 1fr;
-      }
-      .illustration-placeholder {
-        width: 200px;
-        height: 200px;
-      }
-    }
-
-        /* Footer Wrapper */
-        .footer-section {
-            background-color: #000000;
-            color: #ffffff;
-            padding: 60px 5% 30px 5%;
-            font-family: Arial, sans-serif;
-        }
-
-        .footer-content {
+        /* MISSION & VISION */
+        .vision-mission-section {
+            padding: 80px 10%;
+            background: #fff;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
             max-width: 1200px;
             margin: 0 auto;
         }
 
-        /* Top Row: Logo and Links */
+        .card {
+            padding: 40px;
+            border: 2px solid #000;
+            box-shadow: 10px 10px 0px #FFD242;
+        }
+
+        .card h3 {
+            font-family: 'Arial Black', sans-serif;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        /* WHAT WE DO (List style) */
+        .what-we-do {
+            padding: 80px 10%;
+            background: #f9f9f9;
+        }
+
+        .what-we-do-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Arial Black', sans-serif;
+            font-size: 32px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .service-box {
+            background: #fff;
+            padding: 30px;
+            border-left: 5px solid #FFD242;
+        }
+
+        .service-box h4 {
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+
+        /* INVESTMENT & WHY CHOOSE US */
+        .focus-section {
+            background-color: #000;
+            color: #fff;
+            padding: 80px 10%;
+        }
+
+        .focus-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 60px;
+        }
+
+        .focus-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .focus-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #333;
+            color: #FFD242;
+            font-weight: bold;
+        }
+
+        .why-us-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .why-box h4 {
+            color: #FFD242;
+            margin-bottom: 8px;
+            font-size: 18px;
+        }
+
+        /* STATS SECTION */
+        .stats-section {
+            background-color: #ffcc33;
+            padding: 60px 10%;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.2rem;
+            font-weight: 800;
+        }
+
+        /* FOR INVESTORS */
+        .investors-cta {
+            padding: 80px 10%;
+            text-align: center;
+            background: #fff;
+        }
+
+        .investors-cta p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        /* FOOTER */
+        .footer-section {
+            background-color: #000;
+            color: #fff;
+            padding: 60px 10%;
+        }
+
         .footer-top {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding-bottom: 40px;
-        }
-
-        .footer-logo {
-            display: flex;
-            align-items: center;
-            font-weight: bold;
-            font-size: 28px;
-            text-decoration: none;
-            color: #fff;
-        }
-
-        .logo-ring {
-            width: 32px;
-            height: 32px;
-            border: 6px solid #fff; /* Thick white ring from image */
-            border-radius: 50%;
-            margin-right: 12px;
+            margin-bottom: 40px;
         }
 
         .footer-links {
             display: flex;
             list-style: none;
-            gap: 40px;
-            margin: 0;
-            padding: 0;
+            gap: 30px;
         }
 
-        .footer-links a {
-            text-decoration: none;
-            color: #ffffff;
-            font-size: 15px;
-            transition: color 0.3s;
+        .footer-links a { color: #fff; text-decoration: none; }
+
+        /* RESPONSIVENESS */
+        @media (max-width: 992px) {
+            .about-container, .vision-mission-section, .focus-container, .why-us-grid {
+                grid-template-columns: 1fr;
+            }
+            .stats-section { grid-template-columns: repeat(2, 1fr); }
+            .about-image { order: -1; }
         }
 
-        .footer-links a:hover {
-            color: #cccccc;
-        }
-
-        /* Bottom Row: Copyright */
-        .footer-bottom {
-            border-top: 1px solid #333; /* Subtle divider */
-            padding-top: 20px;
-            font-size: 13px;
-            color: #888;
-        }
-
-        /* Mobile Responsiveness */
         @media (max-width: 768px) {
-            .footer-top {
+            .hamburger { display: flex; }
+            .nav-menu {
+                position: absolute;
+                top: 80px;
+                left: -100%;
                 flex-direction: column;
-                align-items: flex-start;
-                gap: 30px;
-            }
-
-            .footer-links {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            .footer-bottom {
+                background-color: #FFD242;
+                width: 100%;
                 text-align: center;
+                transition: 0.4s;
+                padding: 40px 0;
+                border-bottom: 2px solid #000;
             }
+            .nav-menu.active { left: 0; }
+            .stats-section { grid-template-columns: 1fr; }
+            .footer-top { flex-direction: column; gap: 30px; }
         }
     </style>
 </head>
@@ -437,131 +300,160 @@
 
     <section class="nav-container">
         <nav class="navbar">
-            <a href="#" class="logo">
-                <div class="logo-circle"></div>
-                <span>VC</span>
+            <a href="index.html" class="logo">
+                <img src="images/brandlogo.png" alt="Logo">
             </a>
-
             <ul class="nav-menu" id="nav-menu">
-                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="aboutus.html" class="nav-link">Our Story</a></li>
-                <li class="nav-item"><a href="team.html" class="nav-link">Team</a></li>
-                <li class="nav-item"><a href="portfolio.html" class="nav-link">Portfolio</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">News</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Talent</a></li>
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="aboutus.html" class="nav-link">Our Story</a></li>
+                <li><a href="team.html" class="nav-link">Team</a></li>
+                <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
-
             <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
             </div>
         </nav>
     </section>
 
     <section class="about-section">
         <div class="about-container">
-            
             <div class="about-text">
+                <span class="tagline-hero">“From Idea to Global Scale”</span>
                 <h2>The founder’s ally.</h2>
-                <p>
-                    When ambitious ideas meet brilliant founders, they know no limits. 
-                    From our team’s entrepreneurial experience to our ever-growing international network, 
-                    everything we do is to create an environment where founders can thrive.
-                </p>
-                <!-- <a href="#" class="btn-story">Our Story</a> -->
+                <p>We are a forward-thinking venture capital firm focused on identifying, funding, and scaling high-potential startups across emerging and global markets.</p>
+                <p>We partner with visionary entrepreneurs building in sectors such as technology, AI, fintech, and digital infrastructure—supporting them from early-stage development to global expansion.</p>
             </div>
-
             <div class="about-image">
-                <img src="images/hero-image.png" alt="Illustration of person with puzzle pieces">
+                <img src="images/hero-image.png" alt="Hero Illustration">
             </div>
-
         </div>
     </section>
 
-    <section class="investment-container">
-  <div class="hero-section">
-    <div class="hero-content">
-      <h1 class="hero-title">The leading European ideas</h1>
-      <p class="hero-description">
-        We’re a European fund with a genuine curiosity for new challenges, having backed founders from diverse backgrounds. Good ideas know no borders. And neither do our investments.
-      </p>
-    </div>
-    <div class="hero-image">
-      <div class="illustration-placeholder">
-        <div class="question-bubble">?</div>
-        <div class="character-shape"></div>
-      </div>
-    </div>
-  </div>
+    <section class="stats-section">
+        <div class="stat-item">
+            <div class="stat-number">70+</div>
+            <div class="stat-label">Companies Funded</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">350+</div>
+            <div class="stat-label">Company Deals</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">20+</div>
+            <div class="stat-label">Number Of Funds</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">459+</div>
+            <div class="stat-label">Total Credit Value</div>
+        </div>
+    </section>
 
-  <div class="stats-section">
-    <div class="stat-item">
-      <div class="stat-icon">🪙↑</div>
-      <div class="stat-number">70<span class="plus-sign">+</span></div>
-      <div class="stat-label">Companies Funded</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-icon">📊</div>
-      <div class="stat-number">350<span class="plus-sign">+</span></div>
-      <div class="stat-label">Company Deals</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-icon">💸</div>
-      <div class="stat-number">20<span class="plus-sign">+</span></div>
-      <div class="stat-label">Number Of Founds</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-icon">💼</div>
-      <div class="stat-number">459<span class="plus-sign">+</span></div>
-      <div class="stat-label">Total Credit Value</div>
-    </div>
-  </div>
+    <section class="vision-mission-section">
+        <div class="card">
+            <h3>Our Mission</h3>
+            <p>To empower the next generation of founders by providing capital, strategic guidance, and global access required to build impactful, scalable companies.</p>
+        </div>
+        <div class="card">
+            <h3>Our Vision</h3>
+            <p>To become a leading global investment firm driving innovation across emerging markets and connecting high-growth startups to international opportunities.</p>
+        </div>
+    </section>
+
+    <section class="what-we-do">
+        <div class="what-we-do-container">
+            <h2 class="section-title">What we do</h2>
+            <div class="services-grid">
+                <div class="service-box">
+                    <h4>1. Venture Investment</h4>
+                    <p>We invest in early-stage and growth-stage startups with scalable business models and strong market potential.</p>
+                </div>
+                <div class="service-box">
+                    <h4>2. Strategic Advisory</h4>
+                    <p>We support founders with product strategy, market positioning, and growth execution.</p>
+                </div>
+                <div class="service-box">
+                    <h4>3. Capital Structuring</h4>
+                    <p>We help startups raise and structure funding rounds efficiently.</p>
+                </div>
+                <div class="service-box">
+                    <h4>4. Growth & Expansion</h4>
+                    <p>We connect startups to global markets, partners, and institutional capital.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="focus-section">
+        <div class="focus-container">
+            <div>
+                <h3>Investment Focus</h3>
+                <p>We invest in companies operating in:</p>
+                <ul class="focus-list">
+                    <li>Artificial Intelligence</li>
+                    <li>EdTech</li>
+                    <li>Fintech</li>
+                    <li>SaaS Platforms</li>
+                    <li>Cloud Infrastructure</li>
+                    <li>Digital Marketplaces</li>
+                </ul>
+            </div>
+            <div>
+                <h3 style="margin-bottom: 20px;">Why choose us</h3>
+                <div class="why-us-grid">
+                    <div class="why-box">
+                        <h4>Founder-Centric Approach</h4>
+                        <p>We back founders, not just ideas.</p>
+                    </div>
+                    <div class="why-box">
+                        <h4>Global Perspective</h4>
+                        <p>We connect local innovation to global capital.</p>
+                    </div>
+                    <div class="why-box">
+                        <h4>Execution Support</h4>
+                        <p>We go beyond funding — we help you scale.</p>
+                    </div>
+                    <div class="why-box">
+                        <h4>Long-Term Partnership</h4>
+                        <p>We build companies that last, not trends that fade.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="investors-cta">
+        <h2 class="section-title">For Investors</h2>
+        <p>We provide access to carefully selected high-growth opportunities across emerging and global markets, with a focus on long-term value creation, disciplined execution, and scalable returns.</p>
     </section>
 
     <section class="footer-section">
         <div class="footer-content">
-            
             <div class="footer-top">
-                <a href="#" class="footer-logo">
-                    <div class="logo-ring"></div>
-                    <span>VC</span>
-                </a>
-
+                <a href="#" class="footer-logo" style="color:#fff; text-decoration:none; font-size:24px; font-weight:bold;">VC Firm</a>
                 <ul class="footer-links">
                     <li><a href="#">Our story</a></li>
                     <li><a href="#">Team</a></li>
                     <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">News</a></li>
                     <li><a href="#">Talent</a></li>
                 </ul>
             </div>
-
-            <div class="footer-bottom">
-                <p>&copy; <span id="year"></span> MyCompany. All rights reserved.</p>
+            <div style="border-top: 1px solid #333; padding-top: 20px; font-size: 13px; color: #888;">
+                <p>&copy; <span id="year"></span> VC Firm. All rights reserved.</p>
             </div>
-
         </div>
     </section>
 
     <script>
+        // Mobile Toggle
         const hamburger = document.getElementById('hamburger');
         const navMenu = document.getElementById('nav-menu');
+        hamburger.addEventListener('click', () => navMenu.classList.toggle('active'));
 
-        hamburger.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-        });
-
-        // Close menu when a link is clicked
-        document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
-            navMenu.classList.remove('active');
-        }));
-
-        // Automatically update the year to 2026
+        // Year update
         document.getElementById('year').textContent = new Date().getFullYear();
 
-        //Intersection Observer for a subtle "fade-in" as user scrolls
-        const observerOptions = { threshold: 0.2 };
+        // Reveal animations
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -569,15 +461,14 @@
                     entry.target.style.transform = "translateY(0)";
                 }
             });
-        }, observerOptions);
+        }, { threshold: 0.1 });
 
-        document.querySelectorAll('.about-text, .about-image').forEach(el => {
+        document.querySelectorAll('.about-text, .about-image, .card, .service-box').forEach(el => {
             el.style.opacity = "0";
             el.style.transform = "translateY(20px)";
-            el.style.transition = "all 0.8s ease-out";
+            el.style.transition = "all 0.6s ease-out";
             observer.observe(el);
         });
     </script>
-
 </body>
 </html>
