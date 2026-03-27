@@ -337,7 +337,7 @@
         .belief-section {
             display: grid;
             grid-template-columns: 1fr 1fr; /* Equal split */
-            min-height: 600px;
+            min-height: 600px; /* Base height, but will grow with text */
             width: 100%;
             overflow: hidden;
             font-family: Arial, sans-serif;
@@ -375,19 +375,19 @@
             margin: 0;
         }
 
-        /* Right Column: Illustration Content */
+        /* Right Column: Image Side */
         .belief-image-side {
-            background-color: #fffaf5; /* Signature Yellow */
+            background-color: #fffaf5; 
+            margin: 0;
+            padding: 0; /* REMOVED padding to allow image to hit edges */
             display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 40px;
         }
 
         .belief-image-side img {
-            max-width: 90%;
-            height: auto;
-            object-fit: contain;
+            width: 100%;
+            height: 100%; /* FORCES image to match the parent's height */
+            object-fit: cover; /* CROPS the image to fill the area without distortion */
+            display: block;
         }
 
         /* Mobile Responsive */
@@ -398,8 +398,7 @@
 
             .belief-image-side {
                 order: -1; /* Image appears first on mobile */
-                padding: 60px 20px;
-                min-height: 350px;
+                height: 400px; /* Fixed height for mobile so it doesn't disappear */
             }
 
             .belief-text-side {
@@ -411,99 +410,82 @@
 
         /* Container for the whole section */
         .portfolio-section {
-            background-color: #fffaf5;
-            padding: 60px 5%;
-            font-family: 'Times New Roman', Times, serif; /* Matching the serif font in the image */
+            background-color: #f9f5ed;
+            padding: 80px 0;
+            overflow: hidden; /* Important: hides the cards as they move out of bounds */
         }
 
-        /* Top Filter/Sort Bar */
-        .portfolio-header {
-            max-width: 1200px;
-            margin: 0 auto 40px auto;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 10px;
+        .brand-title {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 0 20px;
+        }
+
+        /* The Slider Container */
+        .slider-wrapper {
             display: flex;
-            gap: 20px;
-            font-size: 12px;
-            text-transform: uppercase;
+            width: fit-content;
+            /* Animation: name | duration | timing | iteration */
+            animation: slide-left 30s linear infinite;
         }
 
-        .portfolio-header span {
-            cursor: pointer;
-            color: #666;
+        /* Pause on hover for better user experience */
+        .slider-wrapper:hover {
+            animation-play-state: paused;
         }
 
-        /* Grid Layout */
         .brands-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr); /* 3 columns on desktop */
-            gap: 60px 40px;
+            display: flex;
+            gap: 30px;
+            padding: 0 15px;
         }
 
-        /* Individual Card Style */
         .brand-card {
-            display: flex;
-            flex-direction: column;
+            flex: 0 0 300px; /* Fixed width for each card so the loop is stable */
+            background: #fff;
+            padding: 25px;
+            border-radius: 4px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            font-family: Arial, sans-serif;
         }
 
         .brand-meta-top {
             display: flex;
             justify-content: space-between;
-            font-size: 10px;
-            color: #999;
+            font-size: 0.7rem;
             text-transform: uppercase;
-            margin-bottom: 10px;
             letter-spacing: 1px;
+            color: #888;
+            margin-bottom: 20px;
         }
 
         .brand-logo-box {
-            background-color: #fcfcfc;
-            border: 1px solid #f0f0f0;
-            height: 180px;
+            height: 100px;
             display: flex;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid #eee;
             margin-bottom: 15px;
-            padding: 20px;
         }
 
         .brand-logo-box img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
+            max-height: 40px;
+            margin-right: 10px;
         }
 
-        .brand-name {
-            font-size: 20px;
-            font-weight: 500;
-            color: #0f4024;
-            margin: 0 0 5px 0;
+        .brand-name { margin: 10px 0 5px 0; font-size: 1.2rem; }
+        .brand-funded { font-size: 0.9rem; color: #666; }
+
+        /* The Animation Logic */
+        @keyframes slide-left {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); } /* Moves exactly half the width of the total content */
         }
 
-        .brand-funded {
-            font-size: 11px;
-            color: #666;
-            margin: 0;
-        }
-
-        /* Mobile Responsiveness */
-        @media (max-width: 900px) {
-            .brands-grid {
-                grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
-            }
-        }
-
-        @media (max-width: 500px) {
-            .brands-grid {
-                grid-template-columns: 1fr; /* 1 column on mobile phones */
-                gap: 40px;
-            }
-            
-            .brand-logo-box {
-                height: 150px;
-            }
+        /* Mobile adjustment */
+        @media (max-width: 768px) {
+            .brand-card { flex: 0 0 250px; }
+            .slider-wrapper { animation-duration: 20s; } /* Speed it up slightly for smaller screens */
         }
 
         /* Footer Wrapper */
@@ -671,7 +653,8 @@
                 <div class="quote-icon">“</div>
                 <div class="feature-content">
                     <h3 class="feature-title">Who is<br>Included?</h3>
-                    <p class="feature-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</p>
+                    <p class="feature-description">We partner with visionary entrepreneurs building in sectors such as technology, AI, fintech, and digital infrastructure supporting them from early stage development to global expansion.
+</p>
                 </div>
             </div>
 
@@ -679,7 +662,7 @@
                 <div class="quote-icon">“</div>
                 <div class="feature-content">
                     <h3 class="feature-title">What do we<br>offer?</h3>
-                    <p class="feature-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat.</p>
+                    <p class="feature-description">To empower the next generation of founders by providing capital, strategic guidance, and global access required to build impactful, scalable companies.</p>
                 </div>
             </div>
 
@@ -687,7 +670,7 @@
                 <div class="quote-icon">“</div>
                 <div class="feature-content">
                     <h3 class="feature-title">How does it<br>work?</h3>
-                    <p class="feature-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio.</p>
+                    <p class="feature-description">Our approach combines strategic capital with deep operational insight, enabling founders to move faster, execute better, and scale sustainably.</p>
                 </div>
             </div>
 
@@ -702,73 +685,82 @@
             <p>
                 We partner with visionary entrepreneurs building in sectors such as technology, 
                 AI, fintech, and digital infrastructure supporting them from early stage development 
-                to global expansion.We don’t just invest capital we invest conviction, network, and long term partnership.
+                to global expansion. We don’t just invest capital—we invest conviction, network, and long-term partnership.
             </p>
         </div>
 
         <div class="belief-image-side">
-            <img src="images/belief-image.png" alt="Collaborative workspace illustration">
+            <img src="images/WhatsApp Image 2026-03-27 at 12.59.48 PM.jpeg" alt="Collaborative workspace illustration">
         </div>
     </section>
 
-    <section class="portfolio-section">
-        <div class="brand-title" style="text-align: center;">
-            <p>Companies we’ve backed</p>
-            <p>We partner with digital pioneers to change the world for the better</p>
-        </div>
+<section class="portfolio-section">
+    <div class="brand-title" style="text-align: center;">
+        <p>Companies we’ve backed</p>
+        <p>We partner with digital pioneers to change the world for the better</p>
+    </div>
 
+    <div class="brand-title">
+        <p style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; font-weight: bold;">Companies we’ve backed</p>
+        <p style="font-family: serif; font-size: 1.5rem;">We partner with digital pioneers to change the world for the better</p>
+    </div>
+
+    <div class="slider-wrapper">
         <div class="brands-grid">
-            
             <div class="brand-card">
-                <div class="brand-meta-top">
-                    <span>2021</span>
-                    <span>Deep-Tech</span>
-                </div>
-                <div class="brand-logo-box">
-                    <div style="font-weight: bold; color: #1e88e5;"><img src="images/liquid.png" alt=""> LIQUID</div>
-                </div>
+                <div class="brand-meta-top"><span>2021</span><span>Deep-Tech</span></div>
+                <div class="brand-logo-box"><div style="font-weight: bold; color: #1e88e5;"> <img src="images/liquid.png" alt="">LIQUID</div></div>
                 <h4 class="brand-name">Liquid</h4>
                 <p class="brand-funded">Funded: $220k</p>
             </div>
-
             <div class="brand-card">
-                <div class="brand-meta-top">
-                    <span>2021</span>
-                    <span>Deep-Tech</span>
-                </div>
-                <div class="brand-logo-box">
-                    <div style="font-weight: bold; color: #f44336;"><img src="images/flibx.png" alt=""> FLIBX</div>
-                </div>
+                <div class="brand-meta-top"><span>2021</span><span>Deep-Tech</span></div>
+                <div class="brand-logo-box"><div style="font-weight: bold; color: #f44336;"> <img src="images/flibx.png" alt="">FLIBX</div></div>
                 <h4 class="brand-name">Flibx</h4>
                 <p class="brand-funded">Funded: $150k</p>
             </div>
-
             <div class="brand-card">
-                <div class="brand-meta-top">
-                    <span>2023</span>
-                    <span>Edu-Tech</span>
-                </div>
-                <div class="brand-logo-box">
-                    <div style="font-weight: bold; color: #2e7d32;"><img src="images/eduloom.png" alt=""> EDULOOM</div>
-                </div>
+                <div class="brand-meta-top"><span>2023</span><span>Edu-Tech</span></div>
+                <div class="brand-logo-box"><div style="font-weight: bold; color: #2e7d32;"> <img src="images/eduloom.png" alt="">EDULOOM</div></div>
                 <h4 class="brand-name">Eduloom</h4>
                 <p class="brand-funded">Funded: $250k</p>
             </div>
-
             <div class="brand-card">
-                <div class="brand-meta-top">
-                    <span>2024</span>
-                    <span>Deep-Tech</span>
-                </div>
-                <div class="brand-logo-box">
-                    <div style="font-weight: bold; color: #1a237e;"><img src="images/odview.png" alt=""> ODVIEW</div>
-                </div>
+                <div class="brand-meta-top"><span>2024</span><span>Deep-Tech</span></div>
+                <div class="brand-logo-box"><div style="font-weight: bold; color: #1a237e;"><img src="images/odview.png" alt=""> ODVIEW</div></div>
                 <h4 class="brand-name">ODView</h4>
                 <p class="brand-funded">Funded: $250k</p>
             </div>
+        </div>
 
+        <div class="brands-grid">
+            <div class="brand-card">
+                <div class="brand-meta-top"><span>2021</span><span>Deep-Tech</span></div>
+                <div class="brand-logo-box"><div style="font-weight: bold; color: #1e88e5;"> <img src="images/jensan.png" alt="">JENSAN</div></div>
+                <h4 class="brand-name">Jensan</h4>
+                <p class="brand-funded">Funded: $220k</p>
             </div>
-    </section>
+            <div class="brand-card">
+                <div class="brand-meta-top"><span>2021</span><span>Deep-Tech</span></div>
+                <div class="brand-logo-box"><div style="font-weight: bold; color: #f44336;"><img src="images/igreen republic.jpeg" alt="">Igreen Republic</div></div>
+                <h4 class="brand-name">Igreen Republic</h4>
+                <p class="brand-funded">Funded: $150k</p>
+            </div>
+            <div class="brand-card">
+                <div class="brand-meta-top"><span>2023</span><span>Edu-Tech</span></div>
+                <div class="brand-logo-box"><div style="font-weight: bold; color: #2e7d32;"> <img src="images//onatech.png" alt="">ONATECNGC</div></div>
+                <h4 class="brand-name">Onatechngc</h4>
+                <p class="brand-funded">Funded: $250k</p>
+            </div>
+            <div class="brand-card">
+                <div class="brand-meta-top"><span>2024</span><span>Deep-Tech</span></div>
+                <div class="brand-logo-box"><div style="font-weight: bold; color: #1a237e;"><img src="images/logo2.png" alt=""> TEFCONNECT</div></div>
+                <h4 class="brand-name">TEFConnect</h4>
+                <p class="brand-funded">Funded: $250k</p>
+            </div>
+        </div>
+    </div>
+</section>
 
 
     <section class="footer-section">
