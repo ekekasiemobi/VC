@@ -16,10 +16,10 @@
         }
         /* Base Styles - Using a Section wrapper as requested */
         .nav-container {
-            background-color: #FFD242;
+            background-color: #fffaf5;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             padding: 0 5%;
-            border-bottom: 2px solid #000;
+            border-bottom: 2px solid #0f4024;
             
             /* The Magic Sauce */
             position: sticky;
@@ -43,13 +43,13 @@
             font-weight: bold;
             font-size: 24px;
             text-decoration: none;
-            color: #000;
+            color: #0f4024;
         }
 
         .logo-circle {
             width: 30px;
             height: 30px;
-            border: 2px solid #000;
+            border: 2px solid #0f4024;
             border-radius: 50%;
             margin-right: 10px;
         }
@@ -65,7 +65,7 @@
 
         .nav-link {
             text-decoration: none;
-            color: #000;
+            color: #0f4024;
             font-weight: 500;
             font-size: 16px;
             transition: opacity 0.3s;
@@ -87,7 +87,7 @@
             display: block;
             width: 25px;
             height: 3px;
-            background-color: #000;
+            background-color: #0f4024;
             transition: 0.3s;
         }
 
@@ -102,12 +102,12 @@
                 top: 80px;
                 left: -100%;
                 flex-direction: column;
-                background-color: #FFD242;
+                background-color: #fffaf5;
                 width: 100%;
                 text-align: center;
                 transition: 0.4s;
                 padding: 20px 0;
-                border-bottom: 2px solid #000;
+                border-bottom: 2px solid #0f4024;
                 z-index: 100;
             }
 
@@ -121,96 +121,96 @@
         }
         
         /* Section Wrapper */
-        .about-section {
-            background-color: #FFD242; /* Matched yellow */
-            padding: 80px 10%;
-            font-family: Arial, sans-serif;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 600px;
-        }
+         .about-section {
+        /* Adding a 70% opaque white overlay (0.7) */
+        background-image: linear-gradient(
+            rgba(255, 250, 245, 0.9), 
+            rgba(255, 250, 245, 0.9)
+        ), 
+        url('images/WhatsApp\ Image\ 2026-03-27\ at\ 12.59.48\ PM.jpeg');
 
-        .about-container {
-            max-width: 1200px;
-            display: grid;
-            grid-template-columns: 1.2fr 1fr; /* Text gets slightly more space */
-            gap: 50px;
-            align-items: center;
-        }
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        
+        padding: 80px 10%;
+        font-family: Arial, sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 600px;
+    }
 
-        /* Left Column: Typography */
-        .about-text h2 {
-            font-family: 'Arial Black', sans-serif;
-            font-size: clamp(32px, 5vw, 48px);
-            line-height: 1.2;
-            color: #000;
-            margin-bottom: 30px;
-            letter-spacing: -1px;
+    .about-container {
+        max-width: 1200px;
+        width: 100%; /* Ensures the container uses available space */
+        display: grid;
+        /* 2. Change grid to use only one column for text */
+        grid-template-columns: 1fr;
+        gap: 50px;
+        align-items: center;
+    }
+
+    /* Left Column: Typography (Now the main content) */
+    .about-text h2 {
+        font-family: 'Arial Black', sans-serif;
+        font-size: clamp(32px, 5vw, 48px);
+        line-height: 1.2;
+        color: #0f4024;
+        margin-bottom: 30px;
+        letter-spacing: -1px;
+    }
+
+    .about-text p {
+        font-size: 16px;
+        line-height: 1.8;
+        color: #0f4024;
+        margin-bottom: 40px;
+        max-width: 500px;
+    }
+
+    .btn-story {
+        display: inline-block;
+        background-color: #0f4024;
+        color: #fff;
+        padding: 15px 45px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 14px;
+        transition: all 0.3s ease;
+    }
+
+    .btn-story:hover {
+        opacity: 0.8;
+        transform: translateY(-2px);
+    }
+
+    /* 3. The .about-image class and styles have been removed */
+
+    /* Mobile Responsive */
+    @media (max-width: 992px) {
+        /* Since there is only one column now, the grid stacking logic is simpler */
+        .about-text {
+            text-align: center;
+            /* Add some padding if needed to keep text from touching edges on mobile */
+            padding: 20px;
         }
 
         .about-text p {
-            font-size: 16px;
-            line-height: 1.8;
-            color: #000;
-            margin-bottom: 40px;
-            max-width: 500px;
+            margin: 0 auto 40px auto;
         }
 
-        .btn-story {
-            display: inline-block;
-            background-color: #000;
-            color: #fff;
-            padding: 15px 45px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 14px;
-            transition: all 0.3s ease;
+        .about-section {
+            padding: 60px 5%;
         }
-
-        .btn-story:hover {
-            opacity: 0.8;
-            transform: translateY(-2px);
-        }
-
-        /* Right Column: Illustration */
-        .about-image {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .about-image img {
-            max-width: 100%;
-            height: auto;
-            /* If you don't have the image file, this placeholder acts as a fallback */
-            min-height: 300px; 
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 992px) {
-            .about-container {
-                grid-template-columns: 1fr; /* Stack vertically */
-                text-align: center;
-            }
-
-            .about-text p {
-                margin: 0 auto 40px auto;
-            }
-
-            .about-section {
-                padding: 60px 5%;
-            }
-            
-            .about-image {
-                order: -1; /* Image appears above text on mobile for better flow */
-            }
-        }
+        
+        /* 4. Removed the 'order: -1' on mobile as the image container is gone */
+    }
 
 
         /* Container for the whole section */
         .portfolio-section {
-            background-color: #ffffff;
+            background-color: #fffaf5;
             padding: 60px 5%;
             font-family: 'Times New Roman', Times, serif; /* Matching the serif font in the image */
         }
@@ -277,7 +277,7 @@
         .brand-name {
             font-size: 20px;
             font-weight: 500;
-            color: #000;
+            color: #0f4024;
             margin: 0 0 5px 0;
         }
 
@@ -307,8 +307,8 @@
 
         /* Footer Wrapper */
         .footer-section {
-            background-color: #000000;
-            color: #ffffff;
+            background-color: #0f4024;
+            color: #fffaf5;
             padding: 60px 5% 30px 5%;
             font-family: Arial, sans-serif;
         }
@@ -353,7 +353,7 @@
 
         .footer-links a {
             text-decoration: none;
-            color: #ffffff;
+            color: #fffaf5;
             font-size: 15px;
             transition: color 0.3s;
         }
@@ -394,7 +394,7 @@
     <section class="nav-container">
         <nav class="navbar">
             <a href="#" class="logo">
-                <img style="width: 50%;" src="images/brandlogo.png" alt="">
+                <img style="width: 30%;" src="images/brandlogo.png" alt="">
                 <!-- <span>MetanCapital</span> -->
             </a>
 
@@ -419,17 +419,13 @@
         <div class="about-container">
             
             <div class="about-text">
-                <h2>The NextGen Venture <br> Capital.</h2>
+                <h2>The simpler way to sell</h2>
                 <p>
                     We’re a close and collaborative team of independent thinkers. 
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+                    We are a forward thinking venture capital firm focused on identifying, 
+                    funding, and scaling high potential startups across emerging and global markets.
                 </p>
-                <a href="aboutus.html" class="btn-story">Our Story</a>
-            </div>
-
-            <div class="about-image">
-                <img src="images/hero-image.png" alt="Illustration of person with puzzle pieces">
+                <!-- <a href="aboutus.html" class="btn-story">Our Story</a> -->
             </div>
 
         </div>
